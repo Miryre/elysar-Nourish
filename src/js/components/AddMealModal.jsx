@@ -6,12 +6,12 @@ const AddMealModal = ({ addMeal }) => {
 
     const newMeal = {
       type: form.mealType.value,
-      name: form.mealName.value,
+      mealName: form.mealName.value,
+      ingredients: form.ingredients.value,
       calories: Number(form.calories.value),
     };
 
     addMeal(newMeal);
-
     form.reset();
   };
 
@@ -22,7 +22,6 @@ const AddMealModal = ({ addMeal }) => {
           <div className="modal-content modal-custom">
             <div className="modal-header border-0">
               <h5 className="modal-title modal-title-custom">Add Meal</h5>
-
               <button
                 type="button"
                 className="btn-close btn-close-white"
@@ -33,38 +32,42 @@ const AddMealModal = ({ addMeal }) => {
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label className="form-label-custom">Meal Type</label>
-                  <select
-                    name="mealType"
-                    className="form-select form-input-custom"
-                  >
+                  <select name="mealType" className="form-select form-input-custom">
                     <option>Breakfast</option>
                     <option>Lunch</option>
                     <option>Dinner</option>
                     <option>Snack</option>
                   </select>
                 </div>
-                <div className="mb-3">
-                  <label className="form-label-custom">Food Items</label>
 
+                <div className="mb-3">
+                  <label className="form-label-custom">Meal Name</label>
                   <input
                     name="mealName"
                     type="text"
                     className="form-control form-input-custom"
-                    placeholder="e.g. chicken, rice, broccoli"
+                    placeholder="e.g. Greek yogurt & granola"
                     required
                   />
                 </div>
 
                 <div className="mb-3">
-                  <label className="form-label-custom">
-                    Calories (optional)
-                  </label>
+                  <label className="form-label-custom">Ingredients</label>
+                  <input
+                    name="ingredients"
+                    type="text"
+                    className="form-control form-input-custom"
+                    placeholder="e.g. yogurt, granola, blueberries"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label-custom">Calories (optional)</label>
                   <input
                     name="calories"
                     type="number"
                     className="form-control form-input-custom"
                     placeholder="e.g. 340"
-                    required
                   />
                 </div>
 

@@ -143,3 +143,233 @@ body {
 .date-btn:hover {
   border-color: #84a98c;
 }
+
+.body-row {
+  min-height: calc(100vh - 70px - 60px);
+  margin: 0;
+}
+
+.meal-log {
+  padding: 28px 32px;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  color: #537a6e;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.meal-type-label {
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  color: #84a98c;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.meal-section {
+  margin-bottom: 28px;
+}
+
+.meal-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #4a6368;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.meal-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meal-name {
+  color: #cad2c5;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.meal-ingredients {
+  color: #537a6e;
+  font-size: 13px;
+  margin: 0;
+}
+
+.meal-calories {
+  color: #b08968;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.meal-card-empty {
+  border: 1.5px dashed #4a6368;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #537a6e;
+  font-size: 14px;
+}
+
+.summary-panel {
+  padding: 28px 24px;
+}
+
+.summary-label {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  color: #537a6e;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.calories-ring-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.calories-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calories-total {
+  font-size: 36px;
+  font-weight: 700;
+  color: #cad2c5;
+  line-height: 1;
+}
+
+.calories-goal {
+  font-size: 13px;
+  color: #537a6e;
+}
+
+.calories-breakdown {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 32px;
+}
+
+.breakdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.breakdown-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #cad2c5;
+}
+
+.breakdown-type {
+  font-size: 11px;
+  color: #537a6e;
+  text-transform: lowercase;
+}
+
+.water-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 260px;
+  margin-bottom: 8px;
+}
+
+.water-glass {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #4a6368;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  padding: 0;
+}
+
+.water-glass.filled {
+  background: #7db8c9;
+  border-color: #7db8c9;
+}
+
+.water-glass:hover:not(.filled) {
+  border-color: #84a98c;
+}
+
+.water-count {
+  font-size: 13px;
+  color: #537a6e;
+  margin-bottom: 28px;
+}
+
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.mood-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1.5px solid #4a6368;
+  background: none;
+  color: #cad2c5;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.18s;
+}
+
+.mood-btn:hover:not(.active) {
+  border-color: #84a98c;
+  color: #84a98c;
+}
+
+.mood-btn.active {
+  background: #b08968;
+  border-color: #b08968;
+  color: #fff;
+}
+
+.notes-input {
+  width: 100%;
+  min-height: 100px;
+  background: #2f3e46;
+  border: 1px solid #4a6368;
+  border-radius: 12px;
+  color: #cad2c5;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  padding: 14px 16px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.notes-input::placeholder {
+  color: #537a6e;
+}
+
+.notes-input:focus {
+  border-color: #84a98c;
+}
