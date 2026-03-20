@@ -1,13 +1,8 @@
-import { useState } from "react";
+import MoodTracker from "./MoodTracker";
 
 const DAILY_GOAL = 2000;
-const MOODS = ["Great", "Good", "Meh", "Low"];
 
-const Summary = ({ meals }) => {
-  const [water, setWater] = useState(0);
-  const [mood, setMood] = useState(null);
-  const [notes, setNotes] = useState("");
-
+const Summary = ({ meals, water, setWater, mood, setMood, notes, setNotes, saveEntry }) => {
   const totalCalories = meals.reduce((sum, m) => sum + (m.calories || 0), 0);
   const percentage = Math.min(totalCalories / DAILY_GOAL, 1);
 
@@ -34,16 +29,11 @@ const Summary = ({ meals }) => {
 
       <div className="calories-ring-wrapper">
         <svg width="180" height="180" viewBox="0 0 180 180">
+          <circle cx="90" cy="90" r={radius} fill="none" stroke="#1e3c42" strokeWidth="10" />
           <circle
             cx="90" cy="90" r={radius}
             fill="none"
-            stroke="#4a6368"
-            strokeWidth="10"
-          />
-          <circle
-            cx="90" cy="90" r={radius}
-            fill="none"
-            stroke="#84a98c"
+            stroke="#74c69d"
             strokeWidth="10"
             strokeLinecap="round"
             strokeDasharray={circumference}
@@ -51,7 +41,6 @@ const Summary = ({ meals }) => {
             transform="rotate(-90 90 90)"
           />
         </svg>
-
         <div className="calories-overlay">
           <span className="calories-total">{totalCalories.toLocaleString()}</span>
           <span className="calories-goal">/ {DAILY_GOAL.toLocaleString()}</span>
@@ -68,7 +57,6 @@ const Summary = ({ meals }) => {
       </div>
 
       <p className="summary-label">WATER</p>
-
       <div className="water-grid">
         {Array.from({ length: 8 }, (_, i) => (
           <button
@@ -82,25 +70,19 @@ const Summary = ({ meals }) => {
       <p className="water-count">{water} of 8 glasses</p>
 
       <p className="summary-label">MOOD</p>
+      <MoodTracker mood={mood} setMood={setMood} />
 
-      <div className="mood-buttons">
-        {MOODS.map((m) => (
-          <button
-            key={m}
-            className={`mood-btn ${mood === m ? "active" : ""}`}
-            onClick={() => setMood(mood === m ? null : m)}
-          >
-            {m}
-          </button>
-        ))}
-      </div>
-
+      <p className="summary-label">NOTES</p>
       <textarea
         className="notes-input"
         placeholder="Any notes about today..."
         value={notes}
         onChange={(e) => setNotes(e.target.value)}
       />
+
+      <button className="save-entry-btn" onClick={saveEntry}>
+        Save Entry
+      </button>
     </div>
   );
 };

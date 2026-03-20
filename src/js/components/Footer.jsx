@@ -1,13 +1,15 @@
 const Footer = () => {
   return (
-    <>
-      <footer className="footer-custom fixed-bottom">
-        <div className="tabs">
-          <button className="footer-tab active">Today</button>
-          <button className="footer-tab">History</button>
+    <footer className="footer-custom">
+      <div className="footer-content">
+        <span className="footer-brand">nourish.</span>
+        <div className="footer-links">
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Contact</a>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
 
